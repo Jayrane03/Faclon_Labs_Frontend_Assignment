@@ -54,3 +54,18 @@ series:
 ## How to Run
 
 1. Install dependencies
+
+
+## Screenshots
+
+### Line Chart
+![Line Chart](screenshots/line.png)
+
+### Column Chart
+![Column Chart](screenshots/column.png)
+
+### Pie Chart
+![Pie Chart](screenshots/pie.png)
+
+### Full UI
+![Full UI](screenshots/ui.png)
