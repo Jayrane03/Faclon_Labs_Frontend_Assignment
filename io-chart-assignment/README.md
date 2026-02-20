@@ -67,5 +67,4 @@ series:
 ### Pie Chart
 ![Pie Chart](screenshots/pie.png)
 
-### Full UI
-![Full UI](screenshots/ui.png)
+
