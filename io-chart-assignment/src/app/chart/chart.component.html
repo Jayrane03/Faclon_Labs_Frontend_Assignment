@@ -1,0 +1,94 @@
+<div class="chart-container">
+  <h2>{{ chartOptions.title }}</h2>
+
+  <svg *ngIf="chartOptions.type === 'line'" [attr.width]="width" [attr.height]="height">
+    <g>
+      <line
+        *ngFor="let t of yTicks"
+        [attr.x1]="padding"
+        [attr.x2]="width - padding"
+        [attr.y1]="scaleY(t)"
+        [attr.y2]="scaleY(t)"
+        class="grid-line"
+      ></line>
+
+      <text
+        *ngFor="let t of yTicks"
+        [attr.x]="5"
+        [attr.y]="scaleY(t) + 4"
+        class="y-label"
+      >
+        {{ t }}
+      </text>
+    </g>
+
+    <line
+      [attr.x1]="padding"
+      [attr.y1]="padding"
+      [attr.x2]="padding"
+      [attr.y2]="height - padding"
+      class="axis"
+    ></line>
+
+    <line
+      [attr.x1]="padding"
+      [attr.y1]="height - padding"
+      [attr.x2]="width - padding"
+      [attr.y2]="height - padding"
+      class="axis"
+    ></line>
+
+    <polyline
+      [attr.points]="linePoints"
+      fill="none"
+      stroke="#8b5cf6"
+      stroke-width="3"
+    ></polyline>
+
+    <g *ngFor="let s of chartOptions.series; let i = index">
+      <circle
+        [attr.cx]="scaleX(i)"
+        [attr.cy]="scaleY(s.value)"
+        r="5"
+        [attr.fill]="s.color"
+      ></circle>
+
+      <text
+        [attr.x]="scaleX(i)"
+        [attr.y]="scaleY(s.value) - 8"
+        text-anchor="middle"
+        class="point-label"
+      >
+        {{ s.value }}
+      </text>
+    </g>
+  </svg>
+
+  <div *ngIf="chartOptions.type === 'column'" class="bar-chart">
+    <div
+      class="bar"
+      *ngFor="let s of chartOptions.series"
+      [style.height.%]="s.value"
+      [style.background]="s.color"
+    >
+      <span>{{ s.value }}</span>
+    </div>
+  </div>
+
+  <svg *ngIf="chartOptions.type === 'pie'" width="220" height="220" viewBox="0 0 200 200">
+    <g transform="translate(100,100)">
+      <path
+        *ngFor="let s of pieSlices"
+        [attr.d]="s.path"
+        [attr.fill]="s.color"
+      ></path>
+    </g>
+  </svg>
+
+  <div class="legend">
+    <div *ngFor="let s of chartOptions.series" class="legend-item">
+      <span class="color-box" [style.background]="s.color"></span>
+      {{ s.name }}
+    </div>
+  </div>
+</div>

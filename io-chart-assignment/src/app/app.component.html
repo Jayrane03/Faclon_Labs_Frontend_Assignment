@@ -1,0 +1,38 @@
+<div class="topbar">
+  <img src="/faclon_logo.png" alt="">
+  <div class="brand">FACLON LABS</div>
+</div>
+
+<div class="app-shell">
+  <div class="panel">
+    <div class="controls">
+      <div class="control">
+        <label>Chart Type</label>
+        <select [(ngModel)]="chartType" (change)="updateChart()">
+          <option value="line">Line</option>
+          <option value="column">Column</option>
+          <option value="pie">Pie</option>
+        </select>
+      </div>
+
+      <div class="control">
+        <label>Title</label>
+        <input type="text" [(ngModel)]="title" (input)="updateChart()" />
+      </div>
+
+      <div class="control">
+        <label>Offline</label>
+        <input type="number" [(ngModel)]="offlineValue" (input)="updateChart()" />
+      </div>
+
+      <div class="control">
+        <label>Online</label>
+        <input type="number" [(ngModel)]="onlineValue" (input)="updateChart()" />
+      </div>
+    </div>
+  </div>
+
+  <div class="chart-card">
+    <io-chart [chartOptions]="options"></io-chart>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  background: radial-gradient(1200px 600px at 10% 10%, #1a1033, #0b0b12 60%);
+  color: #e6e6f0;
+}
+
+input, select, button {
+  font-family: inherit;
+  background: #12121c;
+  color: #e6e6f0;
+  border: 1px solid #2a2a40;
+  border-radius: 10px;
+  padding: 10px 12px;
+  outline: none;
+}
+
+input:focus, select:focus, button:focus {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.3);
+}
+
+button {
+  cursor: pointer;
+  background: linear-gradient(135deg, #7c3aed, #5b21b6);
+  border: none;
+  font-weight: 600;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.35);
+}
