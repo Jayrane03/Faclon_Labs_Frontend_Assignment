@@ -53,7 +53,10 @@ series:
 
 ## How to Run
 
-1. Install dependencies
+1. Install dependencies   - npm install
+2. Start the development server - npx ng serve
+3. Open in browser -   http://localhost:4200
+4. 
 
 
 ## Screenshots
@@ -67,4 +70,20 @@ series:
 ### Pie Chart
 ![Pie Chart](screenshots/pie.png)
 
+<<<<<<< HEAD
+=======
+## Reusability
+
+The io-chart component can be reused anywhere in the application by passing a different ChartOptions object. Multiple charts can be rendered on the same page using different configurations.
+
+## Limitations
+
+- Basic scaling logic intended for small to medium datasets
+- Simple animation system
+- Not optimized for very large datasets
+
+## Author
+
+Faclon LABS Assignment Submission
+>>>>>>> 2749db5d1c8844e2e3bf5671cbffbcfbca44bf17
 
